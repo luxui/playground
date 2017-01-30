@@ -1,27 +1,27 @@
+const path = require('path');
+
+const buildDir = path.resolve(__dirname, 'build');
+
 module.exports = {
-  devtool: '#source-map',
-  entry: {
-    bundle: './src/index.js'
+  devServer: {
+    contentBase: buildDir,
+    historyApiFallback: true,
+    hot: true,
+    port: 8080,
+    watchContentBase: true,
   },
-  eslint: {
-    emitWarning: true
-  },
+  entry: './src/index.js',
   module: {
-    preLoaders: [
-      {
-        exclude: /node_modules/,
-        loaders: ['eslint-loader']
-      }
-    ],
     loaders: [
       {
-        exclude: /node_modules/,
-        loader: 'babel'
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader?presets[]=es2015'
       }
     ]
   },
   output: {
-    filename: 'build/index.js',
-    sourceMapFilename: 'build/index.map'
-  }
+    filename: 'index.js',
+    path: buildDir,
+  },
 };

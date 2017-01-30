@@ -25,4 +25,4 @@ app
   // .page('', home)
   .page('/', home)
   .page('/home', home)
-  .visit('/home');
+  .visit(window.location.pathname || '/home');

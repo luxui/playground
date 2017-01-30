@@ -4,16 +4,19 @@
   "description": "kjshfdkjgfhd",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:html && npm run build:js",
+    "build": "webpack",
+    "postbuild": "cp ./src/index.html ./build/index.html",
     "prebuild": "rm -rf build && mkdir build",
-    "build:js": "webpack",
-    "build:html": "cp src/index.html build/index.html",
-    "//start": "forever -w api.js && http-server build/"
+    "server": "forever --watchDirectory server/ server/api.js",
+    "start": "webpack-dev-server",
+    "prestart": "npm run build"
   },
   "keywords": [],
   "author": "Joshua T Kalis <JoshKalis@QuickenLoans.com>",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack-dev-server": "^1.16.2"
+  },
   "dependencies": {
     "@luxui/lux": "file:///Users/jkalis/Pro/QL/WebCore/luxui/lux-core",
     "babel-core": "^6.18.2",
@@ -32,6 +35,6 @@
     "react-a11y": "^0.3.3",
     "react-dom": "^15.4.2",
     "redux": "^3.6.0",
-    "webpack": "^1.13.3"
+    "webpack": "^2.2.0"
   }
 }

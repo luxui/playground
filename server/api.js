@@ -1,13 +1,4 @@
-const books = require('./books.json').map((title) => {
-  const ISBN = `9${Math.random().toString().slice(2, 14)}`;
-
-  return {
-    fakeISBN: ISBN,
-    href: `/books/${ISBN}`,
-    rel: ['item'],
-    title,
-  };
-});
+const books = require('./books.json');
 
 const { mapToRouteHandler, server } = require('./server');
 
@@ -46,7 +37,11 @@ const routes = [
           { href: '/', rel: ['index'], title: 'Root Resource' },
           { href: '/home', rel: ['section'], title: 'Home' },
           { href: '/about', rel: ['section'], title: 'About' },
-          { href: '/books', rel: ['chapter', 'collection', 'section', 'self'], title: 'Books' },
+          {
+            href: '/books',
+            rel: ['chapter', 'collection', 'section', 'self'],
+            title: 'Books'
+          },
         ],
         properties: {
           count: books.length,
@@ -85,7 +80,7 @@ const routes = [
                 value: found.title,
               },
               {
-                name: 'isbm',
+                name: 'isbn',
                 title: 'Book ISBN',
                 type: 'text',
                 value: found.fakeISBN,
@@ -100,8 +95,16 @@ const routes = [
           { href: '/', rel: ['index'], title: 'Root Resource' },
           { href: '/home', rel: ['section'], title: 'Home' },
           { href: '/about', rel: ['section'], title: 'About' },
-          { href: '/books', rel: ['chapter', 'collection', 'section'], title: 'Books' },
-          { href: `/books/${request.params.ISBN}`, rel: ['chapter', 'collection', 'item', 'self'], title: found.title },
+          {
+            href: '/books',
+            rel: ['chapter', 'collection', 'section'],
+            title: 'Books'
+          },
+          {
+            href: `/books/${request.params.ISBN}`,
+            rel: ['chapter', 'collection', 'item', 'self'],
+            title: found.title
+          },
         ],
         properties: found,
         title: found.title,

@@ -1,0 +1,77 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+body:before {
+  content: '';
+  background: -webkit-linear-gradient(left, #6c9f2e 0%, #6c9f2e 16.67%, #2081bf 16.67%, #2081bf 33.33%, #0c4569 33.33%, #0c4569 50%, #ff9b00 50%, #ff9b00 66.67%, #b5121b 66.67%, #b5121b 83.33%, #551387 83.33%, #551387);
+  background: linear-gradient(to right, #6c9f2e 0%, #6c9f2e 16.67%, #2081bf 16.67%, #2081bf 33.33%, #0c4569 33.33%, #0c4569 50%, #ff9b00 50%, #ff9b00 66.67%, #b5121b 66.67%, #b5121b 83.33%, #551387 83.33%, #551387);
+  background-repeat: repeat-y;
+  background-size: 100%;
+  display: block;
+  height: 10px;
+  width: 100%
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 50em;
+  text-align: left;
+}
+
+#skip-to-content {
+  display: none;
+}
+
+nav ul {
+  border-bottom: 1px solid rgb(170, 170, 170);
+  margin: 0 0 2em;
+  padding: 0 0 1ex;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 1ex;
+}
+
+nav ul li a {
+  padding: 1ex 3ex;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background: rgb(255, 155, 0);
+  color: white;
+}
+
+a {
+  color: rgb(32, 129, 191);
+}
+
+.form-field {
+  margin: 1ex 0;
+  padding: 1ex 0;
+}
+
+label {
+  display: block;
+}
+
+input {
+  padding: 1ex;
+}
+
+footer a {
+  margin: 0 1ex;
+}
+
+/*
+green: rgb(108, 159, 46);
+blue: rgb(32, 129, 191);
+red: rgb(181, 18, 27);
+orange: rgb(255, 155, 0);
+gray: rgb(170, 170, 170);
+*/

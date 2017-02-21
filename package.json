@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "postbuild": "cp ./src/index.html ./build/index.html",
-    "prebuild": "rm -rf build && mkdir build",
+    "prebuild": "npm run htmlcss",
+    "htmlcss": "cp ./src/index.html ./build/index.html && cp ./src/styles.css ./build/styles.css",
+    "prehtmlcss": "rm -rf build && mkdir build",
     "server": "forever --watchDirectory server/ server/api.js",
-    "start": "webpack-dev-server",
-    "prestart": "npm run build"
+    "start": "webpack-dev-server --hot",
+    "prestart": "npm run htmlcss",
+    "start-with-latest-local": "cp ../lux-core/dist/reactLux.js node_modules/@luxui/lux/dist/reactLux.js && npm start"
   },
   "keywords": [],
   "author": "Joshua T Kalis <JoshKalis@QuickenLoans.com>",

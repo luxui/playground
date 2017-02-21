@@ -16,13 +16,13 @@ const routes = [
         // class: [''],
         // embeded: [],
         links: [
-          { href: '/', rel: ['index', 'self'], title: 'Root Resource' },
+          { href: '/', rel: ['index', 'self'], title: 'LuxUI Application' },
           { href: '/home', rel: ['section'], title: 'Home' },
           { href: '/about', rel: ['section'], title: 'About' },
           { href: '/books', rel: ['collection', 'section'], title: 'Books' },
         ],
         // properties: {},
-        title: 'Root Resource',
+        title: 'LuxUI Application',
       };
       response.status = 200;
     },
@@ -34,7 +34,7 @@ const routes = [
         class: ['collection'],
         entities: books,
         links: [
-          { href: '/', rel: ['index'], title: 'Root Resource' },
+          { href: '/', rel: ['index'], title: 'LuxUI Application' },
           { href: '/home', rel: ['section'], title: 'Home' },
           { href: '/about', rel: ['section'], title: 'About' },
           {
@@ -92,7 +92,7 @@ const routes = [
         ],
         class: ['item'],
         links: [
-          { href: '/', rel: ['index'], title: 'Root Resource' },
+          { href: '/', rel: ['index'], title: 'LuxUI Application' },
           { href: '/home', rel: ['section'], title: 'Home' },
           { href: '/about', rel: ['section'], title: 'About' },
           {

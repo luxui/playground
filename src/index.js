@@ -8,7 +8,7 @@ const app = lux({
 
 const about = () => (
   <div>
-    <h1>About Us</h1>
+    <h1>About LuxUI</h1>
     <p>So much to learn.</p>
   </div>
 );
@@ -22,7 +22,6 @@ const home = () => (
 
 app
   .page('/about', about)
-  // .page('', home)
   .page('/', home)
   .page('/home', home)
-  .visit(window.location.pathname || '/home');
+  .visit(lux.luxPath(window.location.pathname || '/home'));

@@ -1,15 +1,7 @@
 const books = require('./books.json');
 
-const { mapToRouteHandler, server } = require('./server');
-
-const port = 8888;
-
-// const geuid = () => Math.random().toString(36).slice(2);
-// const mockDB = {};
-
-const routes = [
-  {
-    path: '/',
+require('./server')
+  .endpoint('/', {
     GET: (request, response) => {
       response.body = {
         // actions: [],
@@ -26,9 +18,8 @@ const routes = [
       };
       response.status = 200;
     },
-  },
-  {
-    path: '/books',
+  })
+  .endpoint('/books', {
     GET: (request, response) => {
       response.body = {
         class: ['collection'],
@@ -51,9 +42,8 @@ const routes = [
       };
       response.status = 200;
     },
-  },
-  {
-    path: '/books/{ISBN}',
+  })
+  .endpoint('/books/{ISBN}', {
     GET: (request, response) => {
       const found = books
         .reduce((acc, book) =>
@@ -111,7 +101,5 @@ const routes = [
       };
       response.status = 200;
     },
-  },
-].map(mapToRouteHandler);
-
-server(routes, port);
+  })
+  .start(8888);

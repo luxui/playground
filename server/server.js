@@ -1,6 +1,8 @@
 const http = require('http');
 const qs = require('querystring');
 
+const endpoints = [];
+
 function bodyParser(request, response, continuation) {
   const body = [];
 
@@ -88,7 +90,9 @@ function mapToRouteHandler(route) {
   return route;
 }
 
-function server(routes, port = 8000) {
+function start(port = 8000) {
+  const routes = endpoints.map(mapToRouteHandler);
+
   function handler(request, response) {
     const matched = routes
       .reduce((acc, route) => acc || route.match(request), false);
@@ -130,6 +134,11 @@ function server(routes, port = 8000) {
 }
 
 module.exports = {
-  mapToRouteHandler,
-  server
+  endpoint: (path, config) => {
+    config.path = path;
+    endpoints.push(config);
+
+    return module.exports;
+  },
+  start,
 };

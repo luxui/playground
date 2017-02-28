@@ -1,3 +1,7 @@
+const published = {
+  'The Count of Monte Cristo': '1844-08-28T00:00:00.000Z',
+};
+
 const books = [
   'To Kill a Mockingbird',
   'Pride and Prejudice',
@@ -96,12 +100,19 @@ const books = [
 ].map((title) => {
   const ISBN = `9${Math.random().toString().slice(2, 14)}`;
 
-  return {
+  const result = {
     fakeISBN: ISBN,
     href: `/books/${ISBN}`,
     rel: ['item'],
     title,
   };
+
+  if (published[title]) {
+    result.publishedDate = published[title];
+  }
+
+  return result;
 });
 
-console.log(JSON.stringify(books, null, ' '));
+// eslint-disable-next-line no-console
+console.log(JSON.stringify(books, null, 2));

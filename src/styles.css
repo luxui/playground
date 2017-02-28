@@ -16,7 +16,7 @@ body:before {
 }
 
 .page {
-  margin: 0 auto;
+  margin: 0 auto 1em;
   max-width: 50em;
   text-align: left;
 }
@@ -47,6 +47,10 @@ nav ul li a:hover {
   color: white;
 }
 
+main {
+  margin-bottom: 4em;
+}
+
 a {
   color: rgb(32, 129, 191);
 }
@@ -61,7 +65,14 @@ label {
 }
 
 input {
+  font-size: 100%;
   padding: 1ex;
+  width: 80%;
+}
+
+footer {
+  border-top: 1px solid gainsboro;
+  padding: 1em 0;
 }
 
 footer a {

@@ -60,8 +60,8 @@ function closeRequest(response) {
   }
 
   response.writeHead(response.status, {
-    // 'Access-Control-Allow-Headers': 'Authorization',
-    // 'Access-Control-Allow-Methods': 'PATCH',
+    'Access-Control-Allow-Headers': 'Authorization',
+    'Access-Control-Allow-Methods': 'DELETE, GET, HEAD, PATCH, POST, PUT',
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/vnd.siren+json',
   });

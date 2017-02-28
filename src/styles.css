@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  font-size: 100%;
   margin: 0;
   text-align: center;
 }
@@ -55,6 +56,11 @@ a {
   color: rgb(32, 129, 191);
 }
 
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
 .form-field {
   margin: 1ex 0;
   padding: 1ex 0;
@@ -70,6 +76,55 @@ input {
   width: 80%;
 }
 
+.btn {
+  background: white;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  box-shadow: gainsboro 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: bold;
+  margin: 2px;
+  padding: 1ex 3ex;
+  transition: 300ms;
+}
+.btn:hover {
+  box-shadow: gainsboro 0 10px 15px 2px;
+}
+
+.btn-delete {
+  border-color: rgb(181, 18, 27);
+}
+
+.btn-submit {
+  background: rgb(32, 129, 191);
+  border-color: rgb(12, 69, 195);
+  color: white;
+}
+
+.notification {
+  background: gainsboro;
+  border-radius: 3px;
+  display: flex;
+  overflow: hidden;
+}
+
+.notification__icon {
+  background: black;
+  height: 50px;
+  width: 50px;
+}
+
+.notification__icon--dismiss { background: transparent; }
+.notification__icon--error { background: rgb(181, 18, 27); }
+.notification__icon--success { background: rgb(108, 159, 46); }
+.notification__icon--warn { background: rgb(255, 155, 0); }
+
+.notification__text {
+  flex-grow: 1;
+  padding: 2ex;
+}
+
 footer {
   border-top: 1px solid gainsboro;
   padding: 1em 0;
@@ -81,7 +136,8 @@ footer a {
 
 /*
 green: rgb(108, 159, 46);
-blue: rgb(32, 129, 191);
+navy: rgb(12, 69, 195);
+topaz: rgb(32, 129, 191);
 red: rgb(181, 18, 27);
 orange: rgb(255, 155, 0);
 gray: rgb(170, 170, 170);

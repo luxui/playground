@@ -92,6 +92,7 @@ require('./server')
             method: 'PUT',
             name: 'update-item',
             title: 'Save Book',
+            type: 'application/json',
           },
           {
             class: ['resource', 'delete'],

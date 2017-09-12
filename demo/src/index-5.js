@@ -20,7 +20,7 @@ function formatDate(date, sep = '-') {
     .join(sep);
 }
 
-// #2
+// #2 - Define a new ReactJS component
 const DateComponent = ({ name, title, value }) => {
   const Wrapper = app.component('Lux.Form.FieldWrapper');
 
@@ -45,7 +45,7 @@ DateComponent.propTypes = {
 };
 
 app
-  // #3
+  // #3 - Register the new component with the application
   .component('date', DateComponent)
   .page('/', home)
   .page('/home', home)

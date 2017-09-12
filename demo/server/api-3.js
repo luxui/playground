@@ -9,7 +9,7 @@ require('./server')
         links: [
           { href: '/', rel: ['index', 'self'], title },
           { href: '/home', rel: ['section'], title: 'Home' },
-          // #1
+          // #1 - Link object in "root" resource
           {
             href: '/books',
             rel: ['chapter', 'collection', 'section'],
@@ -21,12 +21,12 @@ require('./server')
       response.status = 200;
     },
   })
-  // #2
+  // #2 - New endpoint
   .endpoint('/books', {
     GET: (request, response) => {
       response.body = {
-        class: ['collection'],                             // <----- NOTE
-        entities: books,                                   // <----- NOTE
+        class: ['collection'],                             // 2.1
+        entities: books,                                   // 2.2
         links: [
           { href: '/', rel: ['index'], title },
           { href: '/home', rel: ['section'], title: 'Home' },
@@ -36,7 +36,7 @@ require('./server')
             title: 'Books'
           },
         ],
-        properties: {                                      // <----- NOTE
+        properties: {                                      // 2.3
           count: books.length,
           paged: true,
         },

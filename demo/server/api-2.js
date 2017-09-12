@@ -6,7 +6,7 @@ require('./server')
       response.body = {
         links: [
           { href: '/', rel: ['index', 'self'], title },
-          // #1
+          // #1 - Add the route to the API `links`
           { href: '/home', rel: ['section'], title: 'Home' },
         ],
         title,

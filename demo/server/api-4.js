@@ -43,7 +43,7 @@ require('./server')
       response.status = 200;
     },
   })
-  // #1
+  // #1 - New Endpoint
   .endpoint('/books/{ISBN}', {
     GET: (request, response) => {
       const found = books
@@ -60,10 +60,10 @@ require('./server')
       }
 
       response.body = {
-        actions: [                                         // <----- NOTE
+        actions: [                                         // 1.1
           {
-            class: ['resource', 'view'],                   // <----- NOTE
-            fields: [                                      // <----- NOTE
+            class: ['resource', 'view'],                   // 1.2
+            fields: [                                      // 1.3
               {
                 name: 'title',
                 title: 'Book Title',
@@ -81,7 +81,7 @@ require('./server')
             title: found.title,
           }
         ],
-        class: ['item'],                                   // <----- NOTE
+        class: ['item'],                                   // 1.4
         links: [
           { href: '/', rel: ['index'], title },
           { href: '/home', rel: ['section'], title: 'Home' },
@@ -90,7 +90,7 @@ require('./server')
             rel: ['chapter', 'collection', 'section'],
             title: 'Books'
           },
-          {                                                // <----- NOTE
+          {                                                // 1.5
             href: `/books/${request.params.ISBN}`,
             rel: ['chapter', 'collection', 'item', 'self'],
             title: found.title

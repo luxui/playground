@@ -1,26 +1,25 @@
 {
   "name": "playground",
   "version": "1.0.0",
-  "description": "kjshfdkjgfhd",
+  "description": "A demo application to introduce functionality in LuxUI.",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "prebuild": "npm run htmlcss",
     "htmlcss": "cp ./src/index.html ./build/index.html && cp ./src/styles.css ./build/styles.css",
     "prehtmlcss": "rm -rf build && mkdir build",
-    "server": "forever --watch --watchDirectory server/ server/api.js",
+    "server": "pm2 start server/api.js --name=\"luxui-demo-api\" --watch",
     "start": "webpack-dev-server --hot",
     "prestart": "npm run htmlcss",
-    "start-with-latest-local": "cp ../lux-core/dist/reactLux.js node_modules/@luxui/lux/dist/reactLux.js && npm start"
+    "stop": "pm2 stop server/api.js",
+    "fetch-local": "cp ../lux-core/dist/reactLux.js node_modules/@luxui/lux/dist/reactLux.js"
   },
   "keywords": [],
   "author": "Joshua T Kalis <JoshKalis@QuickenLoans.com>",
   "license": "MIT",
-  "devDependencies": {
-    "webpack-dev-server": "^1.16.2"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "@luxui/lux": "file:///Users/jkalis/Pro/QL/WebCore/luxui/lux-core",
+    "@luxui/lux": "^1.0.0-alpha-7",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
     "babel-preset-es2015": "^6.18.0",
@@ -33,10 +32,12 @@
     "eslint-plugin-react": "^6.6.0",
     "exports-loader": "^0.6.3",
     "imports-loader": "^0.6.5",
+    "pm2": "^2.6.1",
     "react": "^15.4.2",
     "react-a11y": "^0.3.3",
     "react-dom": "^15.4.2",
     "redux": "^3.6.0",
-    "webpack": "^2.2.0"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }

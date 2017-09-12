@@ -69,7 +69,6 @@ require('./server')
                 type: 'text',
                 value: found.title,
               },
-              // #1
               {
                 name: 'publishDate',
                 title: 'Publication Date',
@@ -123,7 +122,7 @@ require('./server')
       response.status = 200;
     },
 
-    // #1
+    // #1 - Update resource
     PUT: (request, response) => {
       const found = books
         .reduce((acc, book) =>

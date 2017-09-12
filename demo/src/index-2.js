@@ -1,5 +1,6 @@
-// #3
+// #3 - Import ReactJS (for JSX)
 import React from 'react'; // `React` must be in scope when using JSX
+
 import lux from '@luxui/lux';
 
 const app = lux({
@@ -7,7 +8,7 @@ const app = lux({
   renderRoot: document.getElementById('root'),
 });
 
-// #2
+// #2 - Define a ReactJS component
 const home = () => (
   <div>
     <h1>Welcome</h1>
@@ -16,8 +17,8 @@ const home = () => (
 );
 
 app
-  // #4
+  // #4 - Static page routes
   .page('/', home)
   .page('/home', home)
-  // #5
+  // #5 - Default page (window.location)
   .visit(lux.luxPath(window.location.pathname || '/home'));

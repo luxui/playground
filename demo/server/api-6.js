@@ -69,7 +69,6 @@ require('./server')
                 type: 'text',
                 value: found.title,
               },
-              // #1
               {
                 name: 'publishDate',
                 title: 'Publication Date',
@@ -86,6 +85,7 @@ require('./server')
             name: 'view-item',
             title: found.title,
           },
+          // #1 - Submit the form
           {
             class: ['resource', 'submit'],
             href: `/books/${request.params.ISBN}`,
@@ -94,6 +94,7 @@ require('./server')
             title: 'Save Book',
             type: 'application/json',
           },
+          // #2 - Delete the resource
           {
             class: ['resource', 'delete'],
             href: `/books/${request.params.ISBN}`,

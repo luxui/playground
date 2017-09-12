@@ -69,7 +69,7 @@ require('./server')
                 type: 'text',
                 value: found.title,
               },
-              // #1
+              // #1 - Add the field entry in the API
               {
                 name: 'publishDate',
                 title: 'Publication Date',

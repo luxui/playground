@@ -28,36 +28,36 @@ Why exactly did I create LuxUI?
 ## Outline
 
   1. Application setup ((api-1.js -> api.js & index-1.js -> index.js))
-    1. First API Resource (root)
-    2. Import LuxUI
-    3. LuxUI Configuration
-    4. Start the application
-    5. Custom Styles
+      1. First API Resource (root)
+      2. Import LuxUI
+      3. LuxUI Configuration
+      4. Start the application
+      5. Custom Styles
   2. Static Page ((api-2.js -> api.js & index.js -> index.js))
-    1. Add the route to the API `links`
-    2. Define a ReactJS component
-    3. Import ReactJS (for JSX)
-    4. Static page routes
-    5. Default page (window.location)
+      1. Add the route to the API `links`
+      2. Define a ReactJS component
+      3. Import ReactJS (for JSX)
+      4. Static page routes
+      5. Default page (window.location)
   3. API Collection resource ((api-3.js -> api.js))
-    1. Link object in "root" resource
-    2. New endpoint
-      1. Resource `class`
-      2. `entities`
-      3. `properties`
+      1. Link object in "root" resource
+      2. New endpoint
+          1. Resource `class`
+          2. `entities`
+          3. `properties`
   4. API Item resource ((api-4.js -> api.js))
-    1. New Endpoint
-      1. Resource `class`
-      2. `actions`
-      3. Action `class`
-      4. Action `fields`
-      5. Link "self"
+      1. New Endpoint
+          1. Resource `class`
+          2. `actions`
+          3. Action `class`
+          4. Action `fields`
+          5. Link "self"
   5. Custom components ((api-5.js -> api.js && index-5.js -> index.js))
-    1. Add the field entry in the API
-    2. Define a new ReactJS component
-    3. Register the new component with the application
+      1. Add the field entry in the API
+      2. Define a new ReactJS component
+      3. Register the new component with the application
   6. Form actions ((api-6.js -> api.js))
-    1. Submit the form
-    2. Delete the resource
+      1. Submit the form
+      2. Delete the resource
   7. Action handlers ((api-7.js -> api.js))
-    1. Update resource
+      1. Update resource
